@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+body {
+  background: #87d7cc;
+}
+
+.css-debugger {
+  border: 2px solid red;
+}
+
+.pomodoro-box {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70vw;
+}
+
+button {
+  padding: 0.5rem;
+  margin: 0.3rem;
+}
+
+.timer {
+  font-size: 150px;
+  padding: 0.5rem;
+}
