@@ -17,6 +17,7 @@ export default function App() {
     const inter = setInterval(function () {
       console.log("inside set interval", timeLeft);
       //this value of set interval is not changing, why?
+      //checking changes
       if (timeLeft <= 0) {
         console.log("will this ever work");
       }
@@ -24,7 +25,8 @@ export default function App() {
       // console.log(timeLeft);
     }, 1000);
   }
-  console.log("just above return");
+  console.log("above return");
+
   return (
     <div className="App">
       <div className="pomodoro-box">
