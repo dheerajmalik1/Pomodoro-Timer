@@ -26,7 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 70vw;
+  min-width: 20vw;
 }
 
 button {
@@ -35,6 +35,6 @@ button {
 }
 
 .timer {
-  font-size: 150px;
+  font-size: 7rem;
   padding: 0.5rem;
 }
