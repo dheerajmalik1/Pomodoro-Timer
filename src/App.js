@@ -1,9 +1,9 @@
 import "./styles.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function App() {
-  const [timeLeft, setTimeLeft] = useState(2 * 60); //time in seconds
-
+  const [timeLeft, setTimeLeft] = useState(60); //time in seconds
+  let interRef = useRef(0);
   const minutesLeft = Math.floor(timeLeft / 60)
     .toString()
     .padStart(2, "0");
@@ -14,7 +14,7 @@ export default function App() {
   // });
 
   function startPomodoro() {
-    const inter = setInterval(function () {
+    interRef.current = setInterval(function () {
       // console.log("inside set interval", timeLeft);
       //this value of set interval is not changing, why?
       //checking changes
@@ -29,6 +29,11 @@ export default function App() {
       });
       // console.log(timeLeft);
     }, 1000);
+    // window.inter = inter;
+  }
+
+  function stopPomodoro() {
+    clearInterval(interRef.current);
   }
   // console.log("above return");
 
@@ -41,7 +46,10 @@ export default function App() {
         </div>
         <div className="buttons">
           <button onClick={startPomodoro}>Start</button>
-          <button>Reset</button>
+          <button onClick={() => setTimeLeft((timeLeft) => (timeLeft = 120))}>
+            Reset
+          </button>
+          <button onClick={stopPomodoro}>Stop</button>
         </div>
       </div>
     </div>
