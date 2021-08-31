@@ -37,6 +37,11 @@ export default function App() {
   }
   // console.log("above return");
 
+  function resetTimerButton() {
+    clearInterval(interRef.current);
+    setTimeLeft((timeLeft) => (timeLeft = 120));
+  }
+
   return (
     <div className="App">
       <div className="pomodoro-box">
@@ -46,9 +51,7 @@ export default function App() {
         </div>
         <div className="buttons">
           <button onClick={startPomodoro}>Start</button>
-          <button onClick={() => setTimeLeft((timeLeft) => (timeLeft = 120))}>
-            Reset
-          </button>
+          <button onClick={resetTimerButton}>Reset</button>
           <button onClick={stopPomodoro}>Stop</button>
         </div>
       </div>
